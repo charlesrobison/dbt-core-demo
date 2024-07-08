@@ -4,7 +4,7 @@ with customers as (
         id as customer_id,
         first_name,
         last_name
-    from dbt-tutorial.jaffle_shop.customers
+    from {{ ref('customers') }}
 
 ),
 
@@ -15,7 +15,7 @@ orders as (
         user_id as customer_id,
         order_date,
         status
-    from dbt-tutorial.jaffle_shop.orders
+    from {{ ref('orders' )}}
 
 ),
 
